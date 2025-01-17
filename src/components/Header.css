@@ -1,0 +1,14 @@
+//* src/components/Header.css */
+.header {
+  background-color: #B0C4DE; /* Cinza metálico */
+  color: #333;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid #B0C4DE; /* Borda superior de 10px com cor cinza metálico */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}

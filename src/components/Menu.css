@@ -1,0 +1,118 @@
+/* src/components/Menu.css */
+
+./* src/components/Menu.css */
+/* src/components/Menu.css */
+/* src/components/Menu.css */
+
+./* src/components/Menu.css */
+
+./* src/components/Menu.css */
+
+./* src/components/Menu.css */
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+  padding: 20px;
+}
+
+/* Título do menu */
+.menu-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #34495e;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Container de itens do menu */
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Espaçamento entre os blocos */
+  align-items: baseline; /* Alinha os itens pela linha de base dos títulos */
+}
+
+/* Itens do menu */
+.menu-item {
+  text-decoration: none;
+  color: #34495e;
+  text-align: center;
+  width: 180px;
+  min-height: 250px; /* Altura mínima dos blocos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinha o conteúdo no topo do bloco */
+  border-radius: 12px;
+  background-color: #ffffff;
+  border-top: 10px solid #B0C4DE; /* Cor do topo em cinza metálico */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  padding-top: 20px; /* Espaçamento interno no topo para os títulos */
+  padding-bottom: 20px; /* Espaçamento interno na base para os subitens */
+}
+
+/* Lista de subitens dentro de cada bloco */
+.menu-item ul {
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o padding padrão da lista */
+  margin: 0; /* Remove a margem padrão da lista */
+  width: 100%; /* Garante que a lista ocupe toda a largura do bloco */
+}
+
+/* Estilo para cada subitem */
+.menu-item ul li {
+  margin-bottom: 10px; /* Espaçamento vertical entre os subitens */
+  font-weight: bold; /* Aplica negrito aos subitens */
+}
+
+/* Remove a margem inferior do último subitem */
+.menu-item ul li:last-child {
+  margin-bottom: 0;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  background-color: #dff9fb;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Ícones dos itens */
+.menu-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #1abc9c;
+}
+
+/* Texto dos itens */
+.menu-item span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+  .menu-grid {
+    flex-direction: column;
+    gap: 20px; /* Ajusta o espaçamento para dispositivos menores */
+    align-items: center; /* Centraliza os itens em dispositivos menores */
+  }
+
+  .menu-item {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .menu-title {
+    font-size: 2rem;
+  }
+}
+
