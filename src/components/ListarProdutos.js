@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const ListarProdutos = () => {
-    const [produtos, setProdutos] = useState([]);
-    const TOKEN = "Bearer SEU_TOKEN_AQUI";
+const TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3Mzg5NjExMjMsImV4cCI6MTczOTU2NTkyM30.hsIuLVK-Iw4g2NScB39zfH6V11d3R2Npw1p4mFZXa2I"; // Substitua pelo seu token válido
 
+function ListarProdutos() {
+    const [produtos, setProdutos] = useState([]); // Estado para armazenar os produtos
+
+    // Função para buscar produtos da API
+    const buscarProdutos = async () => {
+        try {
+            const response = await axios.get("http://3.217.55.187:8083/api/produtos", {
+                headers: {
+                    Authorization: TOKEN,
+                },
+            });
+            setProdutos(response.data); // Atualiza a lista de produtos
+        } catch (error) {
+            console.error("Erro ao buscar produtos:", error);
+        }
+    };
+
+    // Chama a função ao montar o componente
     useEffect(() => {
-        const fetchProdutos = async () => {
-            try {
-                const response = await axios.get("http://localhost:8083/api/produtos", {
-                    headers: {
-                        Authorization: TOKEN,
-                    },
-                });
-                setProdutos(response.data);
-            } catch (error) {
-                console.error("Erro ao listar produtos:", error);
-            }
-        };
-
-        fetchProdutos();
+        buscarProdutos();
     }, []);
 
     return (
@@ -45,6 +48,6 @@ const ListarProdutos = () => {
             </table>
         </div>
     );
-};
+}
 
 export default ListarProdutos;

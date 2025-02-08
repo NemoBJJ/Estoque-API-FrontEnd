@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import FormularioProduto from "./FormularioProduto"; // Importando o Formulário
 
-const TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MzY4NjU5MDMsImV4cCI6MTczNzQ3MDcwM30.hZMse5-iyztoeM6JBpwb76yhlGnqtdYSIL-1ifCI3_A"; // Substitua pelo seu token válido
+const TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3Mzg5NjExMjMsImV4cCI6MTczOTU2NTkyM30.hsIuLVK-Iw4g2NScB39zfH6V11d3R2Npw1p4mFZXa2I"; // Substitua pelo seu token válido
 
 function TabelaProdutos() {
     const [produtos, setProdutos] = useState([]); // Estado para armazenar os produtos
@@ -11,7 +11,7 @@ function TabelaProdutos() {
     // Função para buscar produtos da API
     const buscarProdutos = async () => {
         try {
-            const response = await axios.get("http://localhost:8083/api/produtos", {
+            const response = await axios.get("http://3.217.55.187:8083/api/produtos", {
                 headers: {
                     Authorization: TOKEN,
                 },
@@ -25,7 +25,7 @@ function TabelaProdutos() {
     // Função para excluir produto
     const excluirProduto = async (id) => {
         try {
-            await axios.delete(`http://localhost:8083/api/produtos/${id}`, {
+            await axios.delete(`http://3.217.55.187:8083/api/produtos/${id}`, {
                 headers: {
                     Authorization: TOKEN,
                 },
@@ -82,4 +82,3 @@ function TabelaProdutos() {
 }
 
 export default TabelaProdutos;
-

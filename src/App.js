@@ -18,6 +18,8 @@ import RecursoProtegido from './components/RecursoProtegido';
 import UltimasTaxas from './components/UltimasTaxas';
 import BuscarTaxasExternas from './components/BuscarTaxasExternas';
 
+console.log(process.env.REACT_APP_API_URL); // Verificando o valor da variável de ambiente
+
 function App() {
   return (
     <Router>

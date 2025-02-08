@@ -4,14 +4,14 @@ import axios from "axios";
 const CriarProduto = () => {
     const [nome, setNome] = useState("");
     const [preco, setPreco] = useState("");
-    const TOKEN = "Bearer SEU_TOKEN_AQUI";
+    const TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3Mzg5NjExMjMsImV4cCI6MTczOTU2NTkyM30.hsIuLVK-Iw4g2NScB39zfH6V11d3R2Npw1p4mFZXa2I";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
             const produto = { nome, preco: parseFloat(preco) };
-            await axios.post("http://localhost:8083/api/produtos", produto, {
+            await axios.post("http://3.217.55.187:8083/api/produtos", produto, {
                 headers: {
                     Authorization: TOKEN,
                     "Content-Type": "application/json",

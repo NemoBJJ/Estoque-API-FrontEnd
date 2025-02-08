@@ -6,7 +6,7 @@ const HealthCheck = () => {
 
     const checkHealth = async () => {
         try {
-            const response = await axios.get("http://localhost:8083/health");
+            const response = await axios.get("http://3.217.55.187:8083/health");
             setStatus(response.data);
         } catch (err) {
             setStatus("Erro ao verificar status da aplicação.");

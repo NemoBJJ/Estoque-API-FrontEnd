@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MzY4NjU5MDMsImV4cCI6MTczNzQ3MDcwM30.hZMse5-iyztoeM6JBpwb76yhlGnqtdYSIL-1ifCI3_A"; // Substitua pelo seu token válido
-
 const SincronizarProdutos = () => {
     const [produtos, setProdutos] = useState([]);
     const [error, setError] = useState("");
 
     const sincronizar = async () => {
         try {
-            const response = await axios.get("http://localhost:8083/api/vendas/sincronizar", {
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/vendas/sincronizar`, {
                 headers: {
-                    Authorization: TOKEN,
+                    Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3Mzg5NjExMjMsImV4cCI6MTczOTU2NTkyM30.hsIuLVK-Iw4g2NScB39zfH6V11d3R2Npw1p4mFZXa2I",
                 },
             });
             setProdutos(response.data); // Atualiza a lista de produtos sincronizados

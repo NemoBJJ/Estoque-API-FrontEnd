@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MzY4NjU5MDMsImV4cCI6MTczNzQ3MDcwM30.hZMse5-iyztoeM6JBpwb76yhlGnqtdYSIL-1ifCI3_A"; // Substitua pelo seu token válido
+const TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE3Mzg5NjExMjMsImV4cCI6MTczOTU2NTkyM30.hsIuLVK-Iw4g2NScB39zfH6V11d3R2Npw1p4mFZXa2I"; // Substitua pelo seu token válido
 
 function FormularioProduto({ aoSalvar, produtoParaEditar, limparEdicao }) {
     const [nome, setNome] = useState("");
@@ -24,7 +24,7 @@ function FormularioProduto({ aoSalvar, produtoParaEditar, limparEdicao }) {
             if (produtoParaEditar) {
                 // Editar produto existente
                 await axios.put(
-                    `http://localhost:8083/api/produtos/${produtoParaEditar.id}`,
+                    `http://3.217.55.187:8083/api/produtos/${produtoParaEditar.id}`,
                     produto,
                     {
                         headers: {
@@ -36,7 +36,7 @@ function FormularioProduto({ aoSalvar, produtoParaEditar, limparEdicao }) {
                 alert("Produto editado com sucesso!");
             } else {
                 // Adicionar novo produto
-                await axios.post("http://localhost:8083/api/produtos", produto, {
+                await axios.post("http://3.217.55.187:8083/api/produtos", produto, {
                     headers: {
                         Authorization: TOKEN,
                         "Content-Type": "application/json",
@@ -94,4 +94,3 @@ function FormularioProduto({ aoSalvar, produtoParaEditar, limparEdicao }) {
 }
 
 export default FormularioProduto;
-
